@@ -1,0 +1,19 @@
+
+
+form{
+    font-size: 36px;
+    font-style: revert;
+
+}
+#fname {
+    background-color: red;
+}
+#pass{
+    background-color: red;
+}
+#cars{
+    background-color: green;
+}
+#text{
+    background-color: green;
+}

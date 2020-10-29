@@ -1,0 +1,46 @@
+
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+a:link {
+    color: blue;
+}
+
+/* visited link */
+a:visited {
+    color: deepskyblue;
+}
+
+/* mouse over link */
+a:hover {
+    color: #ff69b4;
+}
+
+
+.primary{
+    background-color: #bca17d;
+    padding: 10px;
+}
+
+.banner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border: 10px solid lightslategrey;
+}
+
+
+.article{
+    background-color: lightgoldenrodyellow;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 10px solid #d7aa34;
+    padding: 10px;
+}
+
+.header{
+    text-decoration: underline;
+    margin-left: 30px;
+}
