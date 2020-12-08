@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function validateEmail(email)
+        {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+        function valForm() {
+            const fnamval=document.forms["myform"]["fname"].value;
+            const snumberval=document.forms["myform"]["snumber"].value;
+            const emailval=document.forms["myform"]["email"].value;
+
+            //console.log(validateEmail(emailval) )
+            if(validateEmail(emailval) === false)
+            {
+                document.forms["myform"]["email"].style.backgroundColor="red";
+            }
+            else
+            {
+                document.forms["myform"]["email"].style.backgroundColor="green";
+            }
+
+            //console.log(snumberval.length)
+            if(snumberval.length<1)
+            {
+                document.forms["myform"]["snumber"].style.backgroundColor="red";
+            }
+            else
+            {
+                document.forms["myform"]["snumber"].style.backgroundColor="green";
+            }
+
+            if(validateEmail(emailval) === false||snumberval.length<1)
+            {
+                return false;
+            }
+            return true;
+
+        }
+
+    </script>
+</head>
+<body>
+<h1>Form:</h1>
+
+<form name="myform">
+    <label for="fname">Name:</label><br>
+    <input type="text" id="fname" name="fname" ><br>
+    <label for="snumber">S number:</label><br>
+    <input type="number" id="snumber" name="snumber" ><br>
+    <label for="email">Email adress:</label><br>
+    <input type="text" id="email" name="email" ><br>
+</form>
+
+<br>
+<button type="button" onclick="valForm()">Validate the form</button>
+
+</body>
+</html>

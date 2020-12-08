@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a</title>
+
+    <script>
+        function myFunction() {
+            const input = (document.getElementById("myNumber").value);
+            document.getElementById("res").innerHTML=input;
+        }
+        function FtoC() {
+            valNum = parseFloat(document.getElementById("myNumber").value);
+            document.getElementById("res").innerHTML=(valNum-32)/1.8;
+        }
+        function CtoF() {
+            valNum = parseFloat(document.getElementById("myNumber").value);
+            document.getElementById("res").innerHTML=(valNum*1.8)+32;
+        }
+    </script>
+
+
+</head>
+<body>
+    <h2>Temperature converter </h2>
+
+    <p id="demo">Please input the temperature:</p>
+
+    <input type="number" id="myNumber">
+
+    <br>
+    <button type="button" onclick="CtoF()">Convert to Fahrenheit</button>
+    <br>
+    <button type="button" onclick="FtoC()">Convert to Celsius</button>
+    <p>The result is: </p>
+    <p id="res"></p>
+
+
+</body>
+</html>

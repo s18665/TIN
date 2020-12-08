@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+
+        function validateEmail(email)
+        {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+        function valForm() {
+            const fnamval=document.forms["myform"]["fname"].value;
+            const snumberval=document.forms["myform"]["snumber"].value;
+            const emailval=document.forms["myform"]["email"].value;
+
+            if(validateEmail(emailval) === false)
+            {
+                document.forms["myform"]["email"].style.backgroundColor="red";
+            }
+
+            if(snumberval.length<1)
+            {
+                document.forms["myform"]["snumber"].style.backgroundColor="red";
+            }
+
+            if(validateEmail(emailval) === true&&snumberval.length>0)
+            {
+                var table = document.getElementById("t1");
+                var row = table.insertRow(1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = fnamval;
+                cell2.innerHTML = snumberval;
+                cell3.innerHTML = emailval;
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+</head>
+<body>
+<h1>Form:</h1>
+
+<form name="myform">
+    <label for="fname">Name:</label><br>
+    <input type="text" id="fname" name="fname" ><br>
+    <label for="snumber">S number:</label><br>
+    <input type="number" id="snumber" name="snumber" ><br>
+    <label for="email">Email adress:</label><br>
+    <input type="text" id="email" name="email" ><br>
+</form>
+
+<br>
+<button type="button" onclick="valForm()">Add to table</button>
+
+<table id="t1">
+    <tr>
+        <th>Name</th>
+        <th>S number</th>
+        <th>email</th>
+    </tr>
+
+</table>
+
+</body>
+</html>
